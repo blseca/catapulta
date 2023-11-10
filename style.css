@@ -120,6 +120,7 @@ section h2{
     box-sizing: border-box;
     overflow: hidden;
     border: 1px solid lightgray;
+    box-shadow: 11px 15px 25px 0 rgba(0,0,0,.2);
     transition: box-shadow 0.2s, scale 0.2s, translate, 0.2s;
 }
 
