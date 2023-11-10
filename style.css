@@ -21,14 +21,39 @@ p {
     margin: 0
 }
 
-header{
-    color: white;
-    background-color: black;
+#parallax-wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    overscroll-behavior: auto;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+    /* Sending the image farther back into the screen and then raise its scale to create the parallax effect */
+    transform: translateZ(-10px) scale(2);
+
+    /* Fallback background (there should be an image) */
     background: linear-gradient(black, rgb(25, 9, 40),rgb(59, 59, 139));
-    height: 80%;
+}
+
+header{
+    position: relative;
+    color: white;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform-style: preserve-3d;
+    z-index: -1;
 }
 header h1{
     font-size: 12vw;
@@ -39,6 +64,11 @@ header p {
 
 section, header, footer {
     padding: 50px;
+}
+
+section {
+    box-shadow: 0px -50px 100px 50px #000000;
+    background-color: white;
 }
 
 section h2{
