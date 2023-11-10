@@ -1,0 +1,84 @@
+/* Title */
+h1, h2 {
+    font-family: "Literata", serif;
+    font-size: 3em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Subtitles */
+h3, h4, h5, h6 {
+    font-size: 2em;
+}
+
+/* Text */
+p {
+    margin: 0;
+}
+
+/* Header */
+header {
+    color: white;
+    background: linear-gradient(black, rgb(25, 9, 40),rgb(59, 59, 139));
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 12vw;
+}
+
+header p {
+    font-size: 2em;
+}
+
+/* Sections */
+section, header, footer {
+    padding: 50px;
+}
+
+section h2{
+    text-align: center;
+    width: 100%;
+}
+
+/* Publications */
+#publications {
+	display: flex;
+    gap: 20px;
+    margin: 20px -50px;
+    overflow-x: scroll;
+    padding: 50px;
+    width: 100%;
+}
+
+.publication {
+    /* border-radius: 10px; */
+    border: 1px solid lightgray;
+    flex-shrink: 0;
+    height: 400px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, scale 0.2s, translate, 0.2s;
+    width: 300px;
+}
+
+.publication:hover {
+    box-shadow: 3px 8px 10px rgba(0,0,0,0.3);
+    scale: 1.02;
+    translate: 0px -10px;
+}
+
+.publication img {
+	height: 100%;   
+    width: 100%;
+}
+
+/* Footer */
+footer {
+	background: linear-gradient(180deg, #000000 0%, #1e104a 59.39%, #481f69 85%, #623920 100%);
+    color: white;
+    height: 400px;
+}
