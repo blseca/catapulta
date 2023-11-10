@@ -13,13 +13,19 @@
     </header>
     <section>
         <h2>Catalog</h2>
-        <div id="publications">
+        <div id="publications" class="closed">
             <div class="publication"><img src="https://img.freepik.com/free-vector/colorful-science-objects-icons-vector-set_1308-131708.jpg" alt=""></div>
             <div class="publication"></div>
             <div class="publication"></div>
             <div class="publication"></div>
             <div class="publication"></div>
         </div>
+        <button id="expand-publications" onclick="
+            let e = document.querySelector('#publications')
+            console.log(e)
+            if(e.className=='open'){e.className='closed'}
+            else e.className='open'
+        ">view more</button>
     </section>
     <footer>
         <h3>Contact Us</h3>
