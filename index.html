@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>BLS Catapulta</title>
-</head>
-<body>
-    <div id="parallax-wrapper">
-        <!-- Everything needs to go into this wrapper now cuz if it isn't, you need to implement scroll chaining -->
-        <header>
-            <img class="background" src="https://news.wisc.edu/content/uploads/2018/04/Dugan_Hilary-1024x768.jpg" alt="">
-            <h1>CATAPULTA</h1>
-            <p>BLS Science Magazine</p>
-        </header>
-        <section> 
-            <h2>Catalog</h2>
-            <div id="publications" class="closed">
-                <div class="publication"><img src="https://img.freepik.com/free-vector/colorful-science-objects-icons-vector-set_1308-131708.jpg" alt=""></div>
-                <div class="publication"></div>
-                <div class="publication"></div>
-                <div class="publication"></div>
-                <div class="publication"></div>
-            </div>
-            <button id="expand-publications" onclick="
-                let e = document.querySelector('#publications')
-                console.log(e)
-                if(e.className=='open'){e.className='closed'}
-                else e.className='open'
-            ">view more</button>
-        </section>
-        <footer>
-            <h3>Contact Us</h3>
-        </footer>
-    </div>
-</body>
+	<head>
+		<!-- Meta -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="variables.css">
+		<link rel="stylesheet" href="styles.css">
+
+		<!-- Title -->
+		<title>BLS</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<!-- Navigation Bar -->
+			<nav>
+	
+			</nav>
+	
+			<!-- Header -->
+			<header>
+				<img id="parallax" src="https://news.wisc.edu/content/uploads/2018/04/Dugan_Hilary-1024x768.jpg" alt="">
+				<div id="title">
+					<h1>Catapulta</h1>
+					<h2>BLS Science Magazine</h2>
+				</div>
+			</header>
+	
+			<!-- Catalog -->
+			<div id="catalog">
+				<h3>Catalog</h3>
+				<div id="publications">
+					<a class="publication"><img src="https://img.freepik.com/free-vector/colorful-science-objects-icons-vector-set_1308-131708.jpg" alt=""></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+					<a class="publication"></a>
+				</div>
+			</div>
+	
+			<!-- Footer -->
+			<footer>
+				<!-- TODO: Create footer -->
+			</footer>
+		</div>
+	</body>
 </html>
