@@ -9,6 +9,11 @@
 <body>
     <div id="parallax-wrapper">
         <!-- Everything needs to go into this wrapper now cuz if it isn't, you need to implement scroll chaining -->
+        <!-- <nav>
+            <a href="">Issues</a>
+            <a href="">Staff</a>
+            <a href="">Contact</a>
+        </nav> -->
         <header>
             <img class="background" src="https://news.wisc.edu/content/uploads/2018/04/Dugan_Hilary-1024x768.jpg" alt="">
             <h1>CATAPULTA</h1>
@@ -17,21 +22,29 @@
         <section> 
             <h2>Catalog</h2>
             <div id="publications" class="closed">
-                <div class="publication"><img src="catapulta-thumbnails\2022 Winter-01.png" alt="">2022 Winter</div>
-                <div class="publication"><img src="catapulta-thumbnails\2022 Spring-01.png" alt="">2022 Spring</div>
-                <div class="publication"><img src="catapulta-thumbnails\2021 Winter (online)-01.png" alt="">2021 Winter</div>
-                <div class="publication"><img src="catapulta-thumbnails\2021 Spring (online)-01.png" alt="">2021 Spring</div>
-                <div class="publication"><img src="catapulta-thumbnails\2021 Fall-01.png" alt="">2021 Fall</div>
-                <div class="publication"><img src="catapulta-thumbnails\2020 Winter (online)-1.png" alt="">2020 Winter</div>
-                <div class="publication"><img src="catapulta-thumbnails\2019 Winter (online)-01.png" alt="">2019 Winter</div>
-                <div class="publication"><img src="catapulta-thumbnails\2019 Spring (online)-01.png" alt="">2019 Spring</div>
-                <div class="publication"><img src="catapulta-thumbnails\2019 Fall (online) -01.png" alt="">2019 Fall</div>
+                <div class="publication"><img src="catapulta-thumbnails\2022 Winter-01.png" alt="2022 Winter"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2022 Spring-01.png" alt="2022 Spring"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2021 Winter (online)-01.png" alt="2021 Winter"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2021 Spring (online)-01.png" alt="2021 Spring"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2021 Fall-01.png" alt="2021 Fall"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2020 Winter (online)-1.png" alt="2020 Winter"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2019 Winter (online)-01.png" alt="2019 Winter"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2019 Spring (online)-01.png" alt="2019 Spring"></div>
+                <div class="publication"><img src="catapulta-thumbnails\2019 Fall (online) -01.png" alt="2019 Fall"></div>
             </div>
             <button id="expand-publications" onclick="
                 let e = document.querySelector('#publications')
+                let button = document.getElementById('expand-publications')
                 console.log(e)
-                if(e.className=='open'){e.className='closed'}
-                else e.className='open'
+                if (e.className == 'open') {
+                    e.className = 'closed'
+                    button.innerHTML = 'view more'
+                    console.log('button closed')
+                }
+                else {
+                    e.className='open'
+                    button.innerHTML = 'view less'
+                }
             ">view more</button>
         </section>
         <footer>

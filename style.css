@@ -35,6 +35,22 @@ button {
     overscroll-behavior: auto;
 }
 
+/* nav {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 7vh;
+    gap: 3vw;
+    padding: 0.5vh 5vw;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 2vw;
+} */
+
 .background {
     position: absolute;
     top: 0;
@@ -89,7 +105,8 @@ section h2{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 60px;
     overflow: hidden;
     padding: 20px;
     margin-bottom: 10px;
@@ -106,7 +123,7 @@ section h2{
 #publications:after {
     content: '';
     background-color: #00000000;
-    box-shadow: inset 0 -100px 50px -40px white;
+    /* box-shadow: inset 0 -100px 50px -40px white; */
     position: absolute;
     pointer-events: none;
     top: 0px;
@@ -116,7 +133,7 @@ section h2{
 
 .publication {
     width: 300px;
-    height: 400px;
+    height: 450px;
     background-color: black;
     flex-shrink: 0;
     box-sizing: border-box;
