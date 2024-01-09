@@ -68,6 +68,7 @@ nav a {
 }
 
 header{
+    box-sizing: border-box;
     position: relative;
     color: white;
     height: 100vh;
@@ -98,6 +99,58 @@ section {
 section h2{
     width: 100%;
     text-align: center;
+    margin-bottom: 1vh;
+}
+
+#mission-statement {
+    box-sizing: border-box;
+    display: grid;
+    gap: 1vh;
+    padding: 10vw;
+}
+
+#mission-statement p {
+    text-align: center;
+    font-size: clamp(15px, 2vw, 100px);
+    padding: 0vh 10vw;
+}
+
+.button {
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    justify-self: center;
+    margin-top: 5vh;
+    padding: 0.5vw;
+    width: clamp(50px, 30vw, 9999px);
+    border-radius: 100px;
+    border: solid 0.25vw black;
+    color: black;
+    font-size: clamp(15px, 2vw, 100px);
+    text-decoration: none;
+    text-align: center;
+}
+
+.button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    content: "";
+    border-radius: 100px;
+    background-image: linear-gradient(180deg, #000000 0%, #1e104a 59.39%, #481f69 85%, #623920 100%);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.button:hover {
+    color: white;
+}
+
+.button:hover::before {
+    opacity: 1;
 }
 
 #publications {
