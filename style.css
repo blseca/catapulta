@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700;0,7..72,900;1,7..72,400;1,7..72,700;1,7..72,900&family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700;0,7..72,900;1,7..72,400;1,7..72,700;1,7..72,900');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 html, body{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    overflow: hidden;
 }
 
 h1, h2 {
@@ -18,6 +19,8 @@ h3,h4,h5,h6 {
     font-size: 2em;
 }
 p {
+    font-size: 1.4em;
+    line-height: 1.4;
     margin: 0
 }
 
@@ -33,6 +36,7 @@ button {
     overflow-x: hidden;
     perspective: 10px;
     overscroll-behavior: auto;
+    position: relative;
 }
 
 /* nav {
@@ -52,19 +56,26 @@ nav a {
 } */
 
 .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
+    position: fixed;
     object-fit: cover;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     /* Sending the image farther back into the screen and then raise its scale to create the parallax effect */
-    transform: translateZ(-10px) scale(2);
+    transform: translateZ(-50px);
+    scale: 6;
 
     /* Fallback background (there should be an image) */
     background: linear-gradient(black, rgb(25, 9, 40),rgb(59, 59, 139));
     pointer-events: none;
+    /* overflow: scroll; */
+}
+.background img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 header{
@@ -78,6 +89,7 @@ header{
     transform-style: preserve-3d;
     z-index: -1;
     background: linear-gradient(transparent, black);
+    padding: 50px !important;
 }
 
 header h1{
@@ -85,11 +97,30 @@ header h1{
     z-index: 1;
 }
 header p {
-    font-size: 2em;
+    max-width: 600px;
+}
+
+.button {
+    cursor: pointer;
+    width: clamp(50px, 200px, 50vw);
+    border: solid 1px white;
+    margin-top: 30px;
+    color: white;
+    border-radius: 100px;
+    padding: 0px 20px 5px 20px;
+    font-size: 1.5em;
+    font-family: 'literata', serif;
+    text-decoration: none;
+    text-align: center;
+    font-style: italic;
+}
+.button:hover {
+    color: white;
+    background-image: linear-gradient(90deg, #000000 0%, #1e104a, #481f69, #623920); 
 }
 
 section, header, footer {
-    padding: 50px;
+    padding: 30px;
 }
 
 section {
@@ -102,57 +133,6 @@ section h2{
     margin-bottom: 1vh;
 }
 
-#mission-statement {
-    box-sizing: border-box;
-    display: grid;
-    gap: 1vh;
-    padding: 10vw;
-}
-
-#mission-statement p {
-    text-align: center;
-    font-size: clamp(15px, 2vw, 100px);
-    padding: 0vh 10vw;
-}
-
-.button {
-    z-index: 1;
-    cursor: pointer;
-    position: relative;
-    justify-self: center;
-    margin-top: 5vh;
-    padding: 0.5vw;
-    width: clamp(50px, 30vw, 9999px);
-    border-radius: 100px;
-    border: solid 0.25vw black;
-    color: black;
-    font-size: clamp(15px, 2vw, 100px);
-    text-decoration: none;
-    text-align: center;
-}
-
-.button::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    content: "";
-    border-radius: 100px;
-    background-image: linear-gradient(180deg, #000000 0%, #1e104a 59.39%, #481f69 85%, #623920 100%);
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-}
-
-.button:hover {
-    color: white;
-}
-
-.button:hover::before {
-    opacity: 1;
-}
-
 #publications {
     position: relative;
     display: flex;
@@ -161,12 +141,12 @@ section h2{
     column-gap: 30px;
     row-gap: 60px;
     overflow: hidden;
-    padding: 20px;
-    margin-bottom: 10px;
+    padding: 50px;
+    margin: -30px -40px 20px -40px;
 }
 
 #publications.closed{
-    height: 480px !important;
+    height: 450px !important;
 }
 
 #publications.open{
@@ -188,19 +168,20 @@ section h2{
     width: 300px;
     height: 450px;
     background-color: black;
+    border-radius: 5px;
     flex-shrink: 0;
     box-sizing: border-box;
+    background-clip: padding-box;
     overflow: hidden;
-    border: 1px solid lightgray;
-    box-shadow: 11px 15px 25px 0 rgba(0,0,0,.2);
+    border: 1px solid rgba(0, 0, 0, 0.285);
+    box-shadow: 1px 4px 5px 0 rgba(0,0,0,.4);
     transition: box-shadow 0.2s, scale 0.2s, translate, 0.2s;
 }
 
 .publication:hover{
-    scale: 1.02;
+    scale: 1.04;
     translate: 0px -10px;
-    box-shadow: 3px 8px 10px rgba(0,0,0,0.3);
-    
+    box-shadow: 5px 15px 25px 0 rgba(0,0,0,.4);
 }
 
 .publication img{
@@ -211,8 +192,10 @@ section h2{
 #expand-publications{
     display: block;
     width: 300px;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
+    margin-bottom: 20px;
+    border-radius: 100px;
     border: none;
     background-color: lightgray;
 }
