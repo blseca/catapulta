@@ -113,6 +113,30 @@ header p {
     max-width: 600px;
 }
 
+#scroll-arrow{
+    position: absolute;
+    bottom: 10px;
+    /* left: 50%; */
+    transform: translateX(-0.15em);
+    font-size: 5em;
+    color: #ffffff;
+    opacity: 0.5;
+    animation: arrow-flash 3s infinite;
+
+}
+
+@keyframes arrow-flash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .button {
     cursor: pointer;
     width: clamp(50px, 200px, 50vw);
@@ -208,7 +232,7 @@ section h2{
     padding: 10px;
     margin: auto;
     margin-bottom: 20px;
-    border-radius: 100px;
+    /* border-radius: 100px; */
     border: none;
     background-color: lightgray;
 }
