@@ -73,7 +73,7 @@ nav a {
     object-fit: cover;
     top: 0px;
     left: 0px;
-    width: 100%;
+    width: 105%;
     height: 100%;
     z-index: -1;
     /* Sending the image farther back into the screen and then raise its scale to create the parallax effect */
