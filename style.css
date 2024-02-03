@@ -231,7 +231,7 @@ section h2{
 
 footer {
     color: white;
-    background: linear-gradient(180deg, #000000 0%, #1e104a 59.39%, #481f69 85%, #623920 100%);
+    background: linear-gradient(180deg, black, transparent, transparent, transparent);
 }
 
 .officers{
@@ -252,7 +252,7 @@ footer {
     font-size: 1em;
     text-transform: uppercase;
     margin-bottom: 5px;
-    color: #a79bd3;
+    color: #00faff;
     font-weight: 600;
 }
 
