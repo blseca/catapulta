@@ -53,9 +53,30 @@
         <footer>
             <h3>Contact Us</h3>
             
-            <form action="">
-                <input type="text" placeholder="What do you need help with?">
+            <form id="form" action="https://script.google.com/macros/s/AKfycbxdcrX10qhfj07svl7iS-cscaX57N8sBNs5rUhjSaEgtnMHQVJChaBSBerxwlkJXAZw4w/exec" method="POST">
+                <input type="text" name="Message" placeholder="What do you need help with?">
+                <button id="submit" type="submit">Send</button>
             </form>
+
+            <script>
+                window.addEventListener("load", function() {
+                const form = document.getElementById('form');
+                form.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    const data = new FormData(form);
+                    const action = e.target.action;
+                    fetch(action, {
+                    method: 'POST',
+                    body: data,
+                    })
+                    .then(() => {
+                    alert("Success!");
+                    document.getElementsByName("Message")[0].value = "";
+                    })
+                });
+                });
+            </script>
+
             <div class="officers">
                 <div class="officer-section">
                     <h3>Editor in Chief</h3>

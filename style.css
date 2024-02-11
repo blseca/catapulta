@@ -231,7 +231,7 @@ section h2{
 
 footer {
     color: white;
-    background: linear-gradient(180deg, black, transparent, transparent, transparent);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 
 .officers{
@@ -259,4 +259,12 @@ footer {
 footer input{
     width: 40%;
     margin: 10px 0px;
+}
+
+#submit {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    width: 10%;
+    cursor: pointer;
 }
