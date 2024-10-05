@@ -8,7 +8,10 @@ html, body{
     font-family: 'IBM Plex Sans Condensed', sans-serif;
     overflow-x: hidden;
 }
-
+.button-container {
+    display: flex;
+    gap: 20px
+}
 h1, h2 {
     font-family: 'Literata', serif;
     margin: 0;
@@ -32,6 +35,7 @@ a{
 button {
     font-family: inherit;
     font-size: inherit;
+    
 }
 
 input{
@@ -99,26 +103,34 @@ header p {
     max-width: 600px;
 }
 
+.stop-flashing {
+    animation: none !important; /* Disable animation with higher priority */
+}
+
 #scroll-arrow{
     bottom: 10px;
     /* left: 50%; */
-    transform: translateX(-0.15em);
     font-size: 5em;
     color: #ffffff;
     opacity: 0.5;
     animation: arrow-flash 3s infinite;
-
+    transition: opacity 0.3s ease;
+    width: 10px;
+    text-align: center;
+    user-select: none;
 }
-
+#scroll-arrow:hover {
+    opacity: 1;
+}
 @keyframes arrow-flash {
     0% {
-        opacity: 0;
-    }
-    50% {
         opacity: 1;
     }
-    100% {
+    50% {
         opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
@@ -135,10 +147,20 @@ header p {
     text-decoration: none;
     text-align: center;
     font-style: italic;
+    background-color: #000000; /* Base background color */
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(30, 16, 74, 0.7), rgba(72, 31, 105, 0.7), rgba(98, 57, 32, 0.7)); /* Transparent gradient */
+    background-size: 100%;
+    background-position: center;
+    background-blend-mode: overlay;
+    user-select: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease; /* Adding opacity transition */
 }
+
 .button:hover {
     color: white;
-    background-image: linear-gradient(90deg, #000000 0%, #1e104a, #481f69, #623920); 
+    background-color: #623920; /* Solid background transition color */
+    transform: scale(1.1); /* Scaling effect */
+    opacity: 1; /* Make sure the gradient is fully visible */
 }
 
 section, header, footer {
